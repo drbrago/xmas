@@ -1,0 +1,70 @@
+{
+  "families": [
+    "Gustavsson",
+    "Webb",
+    "Johansson",
+    "Emma"
+  ],
+  "items": [
+    {
+      "family": "Gustavsson",
+      "category": "Sill & fisk",
+      "name": "Senapssill"
+    },
+    {
+      "family": "Webb",
+      "category": "Sill & fisk",
+      "name": "Löksill"
+    },
+    {
+      "family": "Johansson",
+      "category": "Lax",
+      "name": "Gravad lax"
+    },
+    {
+      "family": "Emma",
+      "category": "Kallskuret",
+      "name": "Julskinka"
+    },
+    {
+      "family": "Gustavsson",
+      "category": "Varmt",
+      "name": "Köttbullar"
+    },
+    {
+      "family": "Webb",
+      "category": "Varmt",
+      "name": "Janssons frestelse"
+    },
+    {
+      "family": "Gustavsson",
+      "category": "Ost & bröd",
+      "name": "Vörtbröd"
+    },
+    {
+      "family": "Gustavsson",
+      "category": "Ost & bröd",
+      "name": "Västerbottenost"
+    },
+    {
+      "family": "Gustavsson",
+      "category": "Tillbehör",
+      "name": "Rödbetssallad"
+    },
+    {
+      "family": "Webb",
+      "category": "Dessert",
+      "name": "Ris à la Malta"
+    },
+    {
+      "family": "Webb",
+      "category": "Dessert",
+      "name": "Körsbärssås"
+    },
+    {
+      "family": "Webb",
+      "category": "Dryck",
+      "name": "Julmust"
+    }
+  ]
+}

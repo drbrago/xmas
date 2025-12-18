@@ -3,7 +3,8 @@
     "Gustavsson",
     "Webb",
     "Johansson",
-    "Emma"
+    "Emma",
+    "Roger"
   ],
   "items": [
     {
@@ -65,6 +66,11 @@
       "family": "Webb",
       "category": "Dessert",
       "name": "Något gottigt"
+    },
+    {
+      "family": "Roger",
+      "category": "Kött",
+      "name": "Älgköttbullar"
     },
     {
       "family": "Gustavsson",

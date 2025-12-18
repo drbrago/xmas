@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Julmat – inköp & matlagning</title>
+  <title>Julmat – ansvar per familj</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div class="logo" aria-hidden="true">🎄</div>
         <div>
           <h1>Julmat</h1>
-          <p class="muted">Checklist uppdelad per familj – bocka av <strong>handlad</strong> och <strong>lagad</strong>. Allt sparas lokalt i webbläsaren.</p>
+          <p class="muted">Lista uppdelad per familj. (Read-only för GitHub Pages.)</p>
         </div>
       </div>
 
@@ -31,51 +31,17 @@
         </div>
 
         <div class="field">
-          <label for="filterStatus">Status</label>
-          <select id="filterStatus">
+          <label for="filterCategory">Kategori</label>
+          <select id="filterCategory">
             <option value="__all__">Alla</option>
-            <option value="missing">Ej klar</option>
-            <option value="bought">Handlad (oavsett lagad)</option>
-            <option value="cooked">Lagad (oavsett handlad)</option>
-            <option value="done">Handlad + lagad</option>
           </select>
         </div>
 
         <div class="buttons">
           <button id="expandAll" class="btn secondary" type="button">Expandera</button>
           <button id="collapseAll" class="btn secondary" type="button">Fäll ihop</button>
-          <button id="reset" class="btn danger" type="button" title="Rensar alla bockar (men inte listan)">Nollställ bockar</button>
         </div>
       </div>
-
-      <section class="summary" aria-live="polite">
-        <div class="card">
-          <div class="kpi">
-            <div class="kpi-label">Totalt</div>
-            <div class="kpi-value"><span id="kpiDone">0</span>/<span id="kpiTotal">0</span></div>
-          </div>
-          <div class="progress">
-            <div class="bar" id="totalBar" style="width:0%"></div>
-          </div>
-          <div class="muted small" id="kpiHint">Handlad + lagad räknas som klar.</div>
-        </div>
-
-        <div class="card">
-          <details class="io">
-            <summary><strong>Backup / flytta till annan dator</strong> <span class="muted">(export/import)</span></summary>
-            <div class="io-grid">
-              <button id="exportState" class="btn" type="button">Exportera status</button>
-              <label class="btn secondary file">
-                Importera status
-                <input id="importState" type="file" accept="application/json" />
-              </label>
-              <button id="copyState" class="btn secondary" type="button">Kopiera status (JSON)</button>
-              <button id="pasteState" class="btn secondary" type="button">Klistra in status (JSON)</button>
-            </div>
-            <p class="muted small">Exporten innehåller bara bockar (inte matlistan). Bra om flera ska synka manuellt.</p>
-          </details>
-        </div>
-      </section>
     </div>
   </header>
 
@@ -86,7 +52,7 @@
 
   <footer class="footer wrap">
     <p class="muted small">
-      Tips: redigera <code>data.json</code> för att ändra familjer & rätter. Status sparas i <code>localStorage</code>.
+      Redigera <code>data.json</code> för att ändra familjer & rätter.
     </p>
   </footer>
 

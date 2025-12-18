@@ -1,26 +1,22 @@
-# Julmat-checklist (GitHub Pages)
+# Julmat-lista (read-only, GitHub Pages)
 
-En superenkel statisk webbapp för jullunch: **lista per familj**, och två bockar per rätt: **handlad** och **lagad**.
+Det här är en **statisk** webbapp som visar en lista på julmat uppdelat per familj.
 
-✅ Ingen build behövs.  
-✅ Funkar på **GitHub Pages**.  
-✅ Bockar sparas i webbläsaren (localStorage).  
-✅ Export/Import av status (om ni vill synka manuellt).
+- Ingen build behövs.
+- Funkar på GitHub Pages.
+- **Read-only**: inga bockar eller “reset”.
 
----
+## Är du “fel” om GitHub Pages?
 
-## Struktur
+Du har rätt i att GitHub Pages inte kan spara något på servern (ingen databas).  
+Men: en webbsida kan fortfarande spara lokalt i webbläsaren (t.ex. `localStorage`) — då sparas det **per dator/telefon** och delas inte automatiskt med andra.
 
-- `index.html` – UI
-- `styles.css` – styling
-- `app.js` – logik (status, filter, export/import)
-- `data.json` – **din lista** (familjer + mat)
-
----
+Vill du ha bockar som delas mellan flera personer behöver du någon form av gemensam lagring:
+t.ex. GitHub Issues/PR som “databas”, Google Sheets API, Firebase/Supabase, eller en minimal serverless-funktion.
 
 ## Ändra listan
 
-Öppna `data.json` och redigera:
+Redigera `data.json`:
 
 ```json
 {
@@ -31,31 +27,9 @@ En superenkel statisk webbapp för jullunch: **lista per familj**, och två bock
 }
 ```
 
-Tips: `name` + `family` + `category` används som ID. Om du byter namn på en rad kan tidigare bockar för den raden “försvinna” (vilket ofta är helt ok).
-
----
-
 ## Publicera på GitHub Pages
 
-1. Skapa ett repo och lägg in filerna (root).
-2. På GitHub: **Settings → Pages**
-3. Under **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: `main` / `/ (root)`
-4. Spara. Efter en stund får du en Pages-URL.
-
----
-
-## Nollställning / backup
-
-- **Nollställ bockar**: knapp i UI
-- **Exportera status**: laddar ner `julmat-status.json`
-- **Importera status**: välj filen igen på annan dator
-
----
-
-## Licens
-
-MIT (gör vad du vill).
+1. Skapa repo och lägg filerna i root.
+2. GitHub → Settings → Pages → Deploy from branch → `main` / root.
 
 Skapad 2025-12-18.

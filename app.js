@@ -22,7 +22,7 @@ function normalizeData(data){
 }
 
 function buildFamilyFilter(families){
-  const sel = $("filterFamily");
+  const sel = document.getElementById("filterFamily");
   sel.innerHTML = `<option value="__all__">Alla</option>`;
   for(const f of families){
     const opt = document.createElement("option");
@@ -33,7 +33,7 @@ function buildFamilyFilter(families){
 }
 
 function buildCategoryFilter(items){
-  const sel = $("filterCategory");
+  const sel = document.getElementById("filterCategory");
   const cats = [...new Set(items.map(i => i.category))].sort((a,b)=>a.localeCompare(b,"sv"));
   sel.innerHTML = `<option value="__all__">Alla</option>`;
   for(const c of cats){
@@ -53,13 +53,13 @@ function matchFilters(item, q, family, category){
 }
 
 function render({ families, items }){
-  const q = $("search").value.trim().toLowerCase();
-  const famFilter = $("filterFamily").value;
-  const catFilter = $("filterCategory").value;
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const famFilter = document.getElementById("filterFamily").value;
+  const catFilter = document.getElementById("filterCategory").value;
 
   const visibleItems = items.filter(it => matchFilters(it, q, famFilter, catFilter));
 
-  const root = $("families");
+  const root = document.getElementById("families");
   root.innerHTML = "";
 
   const famsToShow = famFilter === "__all__" ? families : [famFilter];
@@ -126,20 +126,20 @@ function render({ families, items }){
 
 function wireControls(data){
   const rerender = () => render(data);
-  $("search").addEventListener("input", rerender);
-  $("filterFamily").addEventListener("change", rerender);
-  $("filterCategory").addEventListener("change", rerender);
+  document.getElementById("search").addEventListener("input", rerender);
+  document.getElementById("filterFamily").addEventListener("change", rerender);
+  document.getElementById("filterCategory").addEventListener("change", rerender);
 
-  $("expandAll").addEventListener("click", () => {
+  document.getElementById("expandAll").addEventListener("click", () => {
     document.querySelectorAll("details.family").forEach(d => d.open = true);
   });
-  $("collapseAll").addEventListener("click", () => {
+  document.getElementById("collapseAll").addEventListener("click", () => {
     document.querySelectorAll("details.family").forEach(d => d.open = false);
   });
 }
 
 (async function main(){
-  const loading = $("loading");
+  const loading = document.getElementById("loading");
   try{
     const raw = await loadData();
     const data = normalizeData(raw);
